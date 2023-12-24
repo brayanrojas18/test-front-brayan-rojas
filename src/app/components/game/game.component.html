@@ -1,0 +1,7 @@
+<div class="card" [routerLink]="'/games/' + game.id">
+        <img [src]="game.thumbnail" class="card-img-top" alt="thumbnail">
+        <div class="card-body">
+            <h5 class="card-title fw-semibold card-text">{{game.title}}</h5>
+            <p class="card-text">{{ game.short_description }}</p>
+        </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="p-3 container">
+    <div class="d-flex flex-column flex-md-row justify-content-start align-items-start align-items-md-center">
+        <div class="col px-2">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search name" aria-label="Search" aria-describedby="basic-addon1" [(ngModel)]="filterSearch" (input)="onSearchChange()">
+            </div>
+        </div>
+        <div class="col px-2">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+                <select class="form-select" id="inputGroupSelect01" [(ngModel)]="filterGender" (change)="onFilterGender()">
+                    <option selected>All</option>
+                    <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col px-2">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Platform</label>
+                <select class="form-select" id="inputGroupSelect01" [(ngModel)]="filterPlat" (change)="onFilterPlat()">
+                    <option selected>All</option>
+                    <option *ngFor="let plat of platforms" [value]="plat">{{plat}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center flex-wrap">
+        <app-game 
+            [game]="game" 
+            *ngFor="let game of games"
+            class="col-12 col-md-3 px-2 pb-2"
+        >
+        </app-game>
+    </div>
+</div>

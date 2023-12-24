@@ -1,0 +1,98 @@
+<div class="container p-3 mt-2 d-flex flex-md-row flex-column"> 
+    <div class="col-md-4 col">
+        <img [src]="form.thumbnail" width="100%">
+        <button class="btn btn-primary mt-3" type="button" style="width: 100%;">
+            <a [href]="form.game_url" target="_blank" style="text-decoration:none" class="text-white fw-bolder">
+                Play Now
+            </a>
+        </button>
+    </div>
+    <div class="col ms-3">
+        <div class="fs-2 fw-semibold">
+            {{form.title}}
+        </div>
+        <br>
+        <div class="fs-3 fw-semibold">
+            Additional Information
+        </div>
+        <hr>
+        <div>
+            <div class="d-flex flex-row">
+                <div class="col">
+                    <span class="text-secondary">Title</span> <br>
+                    <span class="fw-medium">{{form.title}}</span>
+                </div>
+                <div class="col">
+                    <span class="text-secondary">Developer</span> <br>
+                    <span class="fw-medium">{{form.developer}}</span>
+                </div>
+                <div class="col">
+                    <span class="text-secondary">Publisher</span> <br>
+                    <span class="fw-medium">{{form.publisher}}</span>
+                </div>
+            </div>
+            <div class="d-flex flex-row pt-3">
+                <div class="col">
+                    <span class="text-secondary">Release Date</span> <br>
+                    <span class="fw-medium">{{form.release_date}}</span>
+                </div>
+                <div class="col">
+                    <span class="text-secondary">Genre</span> <br>
+                    <span class="fw-medium">{{form.genre}}</span>
+                </div>
+                <div class="col">
+                    <span class="text-secondary">Platform</span> <br>
+                    <span class="fw-medium">{{form.platform}}</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="fs-2 fw-semibold">
+           About {{form.title}}
+        </div>
+        <hr>
+        <p>
+            {{form.description}}
+        </p>
+        <br>
+        <div class="fs-3 fw-semibold">
+            Minimum System Requirements
+        </div>
+        <hr>
+        <div>
+            <div class="d-flex flex-row">
+                <div class="col pe-5">
+                    <span class="text-secondary">OS</span> <br>
+                    <span class="fw-medium">{{form.minimum_system_requirements.os}}</span>
+                </div>
+                <div class="col ps-5">
+                    <span class="text-secondary">Processor</span> <br>
+                    <span class="fw-medium">{{form.minimum_system_requirements.processor}}</span>
+                </div>
+            </div>
+            <div class="d-flex flex-row pt-3">
+                <div class="col pe-5">
+                    <span class="text-secondary">Graphics</span> <br>
+                    <span class="fw-medium">{{form.minimum_system_requirements.graphics}}</span>
+                </div>
+                <div class="col ps-5">
+                    <span class="text-secondary">Memory</span> <br>
+                    <span class="fw-medium">{{form.minimum_system_requirements.memory}}</span>
+                </div>
+            </div>
+            <div class="col pt-3">
+                <span class="text-secondary">Storage</span> <br>
+                <span class="fw-medium">{{form.minimum_system_requirements.storage}}</span>
+            </div>
+        </div>
+        <div class="fs-2 fw-semibold">
+            {{form.title}} Screenshots
+        </div>
+        <hr>
+        <div class="d-flex flex-row flex-wrap ">
+            <div *ngFor="let img of form.screenshots" class="col pb-3">
+                <img [src]="img.image" width="200px">
+            </div>
+        </div>
+    </div>
+</div>
