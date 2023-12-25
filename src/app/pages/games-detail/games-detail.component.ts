@@ -22,7 +22,6 @@ export class GamesDetailComponent {
     this.route.params.subscribe(params => {
       this.api.getGameId(params['id'])
         .subscribe((data) => {
-          console.log(data, 'data')
           this.form = data
         })
     })

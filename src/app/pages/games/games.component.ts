@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { GameComponent } from './../../components/game/game.component';
 import { Game } from './../../models/game.model'
 import { ApiService } from './../../services/api.service';
+import { NgxLoadingModule } from "ngx-loading";
 
 @Component({
   selector: 'app-games',
@@ -27,6 +28,8 @@ export class GamesComponent {
   // Selects
   genders: string[] = [];
   platforms: string[] = [];
+
+  loading: boolean = false;
   
   // Functions
   onSearchChange() {
@@ -55,11 +58,14 @@ export class GamesComponent {
   }
 
   getList() {
+    this.loading = true
     this.api.getGames('', null)
       .subscribe((data) => {
         
         // Data
         this.games = data
+
+        this.loading = false
 
         // Find genders for select options
         const findGen = data.map((v:any) => {
@@ -81,7 +87,6 @@ export class GamesComponent {
   }
 
   ngOnInit() {
-    console.log('ngOnInit')
     this.getList()
   }
 

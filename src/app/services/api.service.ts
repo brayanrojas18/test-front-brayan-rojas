@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Game, GameById } from './../models/game.model'
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment.development';
 import { Observable } from 'rxjs'
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs'
 })
 export class ApiService {
 
-  url: string = environment.apiUrl
+  url: string = environment?.apiUrl
 
   constructor(private http:HttpClient) { }
 

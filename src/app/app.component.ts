@@ -9,7 +9,7 @@ import { GamesComponent } from './pages/games/games.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HttpClientModule, NgbModule, GamesComponent, RouterModule],
+  imports: [CommonModule, RouterOutlet, HttpClientModule, NgbModule, GamesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
